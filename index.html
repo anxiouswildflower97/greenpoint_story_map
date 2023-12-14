@@ -1,0 +1,151 @@
+<!doctype HTML>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <title>The Lady in Greenpoint</title>
+    
+    <!--leaflet basic code-->
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"
+    integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY="
+    crossorigin=""/>
+    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"
+    integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo="
+    crossorigin=""></script>
+    
+    <!--leaflet designer maps-->
+    <script src="https://unpkg.com/leaflet@latest/dist/leaflet.js"></script>
+    <script src="https://unpkg.com/leaflet-providers@latest/leaflet-providers.js"></script>
+   
+    <!--referencing external geojson file-->
+    <script src="geodata.js"></script>
+
+    <!--css stylesheet-->
+    <link rel="stylesheet" href="styles.css">
+
+    <!--google fonts-->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Trade+Winds&display=swap" rel="stylesheet">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Underdog&display=swap" rel="stylesheet">
+
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Special+Elite&display=swap" rel="stylesheet">
+  </head>
+
+  <body>
+    <div class="container">
+
+        <div id="title">
+          <center><h1 id="main-title">The Lady in Greenpoint</h1></center>
+          <center><h2 id="subtitle">A 3-mile walking audio ghost story starting at the Pulaski Bridge.</h2></center>
+        </div>
+
+        <div id="introduction">
+          <h3 class="headings">Directions</h3>
+          <p class="text">Bring headphones and a smartphone, maybe a backup battery. Have money to take the subway once. There are stops at two bars, but you can stay outside if you’d like. This will take between 2 and 4 hours, depending on your pace, any stops you make, and if you take The Shortcut (map for this coming soon).</p>
+          <p class="text">Go to the foot of the Pulaski Bridge on the Long Island City side. An easy path is taking the 7 train to Vernon/Jackson, or the G train to 21 St.—Van Alst. It’s a brief stroll from there.</p>
+          <p class="text">When you get to the Pulaski Bridge, begin below with the Prologue. The recommendation is to start the walk at twilight. Go alone or bring a friend so you don’t get lost. If you have trouble, consult the Map below.</p>
+          <p id="text-emphasize">Be Careful of passersby and cars!!!</p>
+        </div>
+
+        <center><div id="map"></div></center>
+
+        <!--toggle between chapters-->
+        <div id="chapters">
+          <div class="tab">
+            <button class="tablinks" onclick="openChapter(event, 'Prologue')">Prologue</button>
+            <button class="tablinks" onclick="openChapter(event, 'Chapter 1')">Chapter 1</button>
+            <button class="tablinks" onclick="openChapter(event, 'Chapter 2')">Chapter 2</button>
+            <button class="tablinks" onclick="openChapter(event, 'Chapter 3')">Chapter 3</button>
+            <button class="tablinks" onclick="openChapter(event, 'Chapter 4')">Chapter 4</button>
+            <button class="tablinks" onclick="openChapter(event, 'Chapter 5')">Chapter 5</button>
+            <button class="tablinks" onclick="openChapter(event, 'Chapter 6')">Chapter 6</button>
+            <button class="tablinks" onclick="openChapter(event, 'Chapter 7')">Chapter 7</button>
+            <button class="tablinks" onclick="openChapter(event, 'Chapter 8')">Chapter 8</button>
+            <button class="tablinks" onclick="openChapter(event, 'Chapter 9')">Chapter 9</button>
+            <button class="tablinks" onclick="openChapter(event, 'Chapter 10')">Chapter 10</button>
+            <button class="tablinks" onclick="openChapter(event, 'Chapter 11')">Chapter 11</button>
+          </div>
+          
+          <div id="Prologue" class="tabcontent">
+            <center><h3 class="headings">Prologue</h3></center>
+            <center><img src="./chapterCoverImages/prologueCover.jpg" height="200"></center>
+            <center><audio controls><source src="./chapterAudio/LG_Chapter00_Prologue - 8:29:22, 4.51 PM.mp3"></audio></center>
+          </div>
+          
+          <div id="Chapter 1" class="tabcontent">
+            <center><h3 class="headings">Chapter 1</h3></center>
+            <center><img src="./chapterCoverImages/chapter1Cover.jpg" height="200"></center>
+            <center><audio controls><source src="./chapterAudio/LG_Chapter01 - 8:29:22, 5.23 PM.mp3"></audio></center>
+          </div>
+          
+          <div id="Chapter 2" class="tabcontent">
+            <center><h3 class="headings">Chapter 2</h3></center>
+            <center><img src="./chapterCoverImages/chapter2Cover.jpg" height="200"></center>
+            <center><audio controls><source src="./chapterAudio/LG_Chapter02 - 9:5:22, 10.19 AM.mp3"></audio></center>
+          </div>
+
+          <div id="Chapter 3" class="tabcontent">
+            <center><h3 class="headings">Chapter 3</h3></center>
+            <center><img src="./chapterCoverImages/chapter3Cover.jpg" height="200"></center>
+            <center><audio controls><source src="./chapterAudio/LG_Chapter03 - with edits .mp3"></audio></center>
+          </div>
+
+          <div id="Chapter 4" class="tabcontent">
+            <center><h3 class="headings">Chapter 4</h3></center>
+            <center><img src="./chapterCoverImages/chapter4Cover.jpg" height="200"></center>
+            <center><audio controls><source src="./chapterAudio/LG_Chapter04 - 9:7:22, 3.10 PM.mp3"></audio></center>
+          </div>
+
+          <div id="Chapter 5" class="tabcontent">
+            <center><h3 class="headings">Chapter 5</h3></center>
+            <center><img src="./chapterCoverImages/chapter5Cover.jpg" height="200"></center>
+            <center><audio controls><source src="./chapterAudio/LG_Chapter05 - 9:7:22, 3.16 PM.mp3"></audio></center>
+          </div>
+
+          <div id="Chapter 6" class="tabcontent">
+            <center><h3 class="headings">Chapter 6</h3></center>
+            <center><img src="./chapterCoverImages/chapter6Cover.jpg" height="200"></center>
+            <center><audio controls><source src="./chapterAudio/LG_Chapter06 - 9:9:22, 11.30 AM.mp3"></audio></center>
+          </div>
+
+          <div id="Chapter 7" class="tabcontent">
+            <center><h3 class="headings">Chapter 7</h3></center>
+            <center><img src="./chapterCoverImages/chapter7Cover.jpg" height="200"></center>
+            <center><audio controls><source src="./chapterAudio/LG_Chapter07 - with edits.mp3"></audio></center>
+          </div>
+
+          <div id="Chapter 8" class="tabcontent">
+            <center><h3 class="headings">Chapter 8</h3></center>
+            <center><img src="./chapterCoverImages/chapter8Cover.jpg" height="200"></center>
+            <center><audio controls><source src="./chapterAudio/LG_Chapter08 - with edits.mp3"></audio></center>
+          </div>
+
+          <div id="Chapter 9" class="tabcontent">
+            <center><h3 class="headings">Chapter 9</h3></center>
+            <center><img src="./chapterCoverImages/chapter9Cover.jpg" height="200"></center>
+            <center><audio controls><source src="./chapterAudio/LG_Chapter09 - 9:7:22, 3.42 PM.mp3"></audio></center>
+          </div>
+
+            <div id="Chapter 10" class="tabcontent">
+              <center><h3 class="headings">Chapter 10</h3></center>
+              <center><img src="./chapterCoverImages/chapter10Cover.jpg" height="200"></center>
+              <center><audio controls><source src="./chapterAudio/LG_Chapter10 - 9:7:22, 3.48 PM.mp3"></audio></center>
+            </div>
+
+            <div id="Chapter 11" class="tabcontent">
+              <center><h3 class="headings">Chapter 11</h3></center>
+              <center><img src="./chapterCoverImages/chapter11Cover.jpg" height="200"></center>
+              <center><audio controls><source src="./chapterAudio/LG_Chapter11 - 9:7:22, 3.56 PM.mp3"></audio></center>
+            </div>
+          </div>
+    </div>
+    <script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+    <script src="main.js"></script>
+  </body>
+</html>
